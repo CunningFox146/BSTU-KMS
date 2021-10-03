@@ -55,6 +55,22 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		const HOVER_COLOR = "red";
 		const HOVER_SCALE = 1.5;
 		
+		const TEXT = [
+			"Молоточковый механизм",
+			"Шпиллер",
+			"Шультер",
+			"Молоточек",
+			"Плечо шпиллера",
+			"Котрфенгер",
+			"Фенгер",
+			"Шультер",
+			"Бентик",
+			"Шлейф бентика",
+			"Демпфельгальтер",
+			"Демпферная колодочка",
+			"Демпферная ложка",
+		]
+		
 		// JS круто, спасибо наследованию контекста
 		var CreateHint = (number) => {
 			var text = this["Text_" + number];
@@ -63,7 +79,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			hover.alpha = 0.1;
 			hover.stop();
 			
-			console.log(hover);
+			text.text = TEXT[number - 1];
 				
 			hover.addEventListener("mouseover", () => {
 				text.color = HOVER_COLOR;
@@ -261,7 +277,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/pianomechanics.png?1633262214180", id:"pianomechanics"}
+		{src:"images/pianomechanics.png?1633273594638", id:"pianomechanics"}
 	],
 	preloads: []
 };
