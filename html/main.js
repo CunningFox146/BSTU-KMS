@@ -20,5 +20,5 @@ function OnNextButtonPushed() {
 	if (idx > pages.length - 1) {
 		idx = 0;
 	}
-	window.open(pages[idx]);
+	window.open(pages[idx], "_self");
 }
