@@ -31,31 +31,6 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	}
 
 
-(lib.text_9 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// Layer_1
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("rgba(0,0,0,0.498)").s().p("AgFBIQgFgDgDgGQgCgGAAgMIAAhKIgSAAIAAgEQAHgDAHgGQAHgHAFgIQADgFAEgMIAEAAIAAAkIAaAAIAAAJIgaAAIAABHQAAALADAEQADAEAFAAQAEAAAEgDQAEgCACgFIAFAAQgFAMgIAGQgHAGgJAAQgFAAgFgDg");
-	this.shape.setTransform(14,1.1);
-
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(0,0,0,0.498)").s().p("AgWA4IgGgCQgDAAgCADIgEAAIAAgnIAEAAQAEARAKAIQAJAJALAAQAJAAAFgFQAFgFAAgHQAAgIgGgGQgGgGgQgJQgSgHgGgHQgFgHAAgLQAAgOAJgJQAKgJAPAAQAFAAAKACIAIACIADgBIADgDIAEAAIAAAmIgEAAQgFgSgHgHQgHgGgLAAQgIAAgFAEQgGAFAAAFQAAAHAEAFQAEAFAMAGIAQAIQAZALAAAUQAAAPgLAKQgMAJgOAAQgJAAgOgDg");
-	this.shape_1.setTransform(5.6,2.9);
-
-	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("rgba(0,0,0,0.498)").s().p("AggAsQgOgQAAgbQAAgbAOgQQAPgQAVAAQATAAAMAMQAMAMAAAVIhMAAQAAAYAMAOQAMAOAQAAQALAAAIgGQAIgGAFgOIAEACQgCARgNANQgMAOgTAAQgTAAgOgPgAgUgqQgIAIgBAOIAzAAQgBgLgCgEQgDgHgGgEQgGgEgGAAQgKAAgIAIg");
-	this.shape_2.setTransform(-4.8,2.9);
-
-	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f("rgba(0,0,0,0.498)").s().p("AgFBIQgFgDgDgGQgCgGAAgMIAAhKIgSAAIAAgEQAHgDAHgGQAHgHAFgIQADgFAEgMIAEAAIAAAkIAaAAIAAAJIgaAAIAABHQAAALADAEQADAEAFAAQAEAAAEgDQAEgCACgFIAFAAQgFAMgIAGQgHAGgJAAQgFAAgFgDg");
-	this.shape_3.setTransform(-13.8,1.1);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
-
-}).prototype = getMCSymbolPrototype(lib.text_9, new cjs.Rectangle(-19.4,-15.8,39,31.7), null);
-
-
 (lib.hover = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -74,17 +49,32 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 	// timeline functions:
 	this.frame_0 = function() {
-		stage.enableMouseOver(60);
+		stage.enableMouseOver();
 		
+		const BASIC_COLOR = "black";
+		const HOVER_COLOR = "red";
+		const HOVER_SCALE = 1.5;
+		
+		console.log(this.Text_1);
 		// JS круто, спасибо наследованию контекста
 		var CreateHint = (number) => {
-			var text = this["Text_" + 9];
+			var text = this["Text_" + number];
 			var hover = this["Hover_" + number];
-		
-			text.visible = false;
+			
 			hover.alpha = 0.1;
-			hover.addEventListener("mouseover", () => text.visible = true);
-			hover.addEventListener("mouseout", () => text.visible = false);
+			
+			hover.addEventListener("mouseover", () => {
+				text.text = "over";
+				text.color = HOVER_COLOR;
+				text.scale = HOVER_SCALE;
+				
+				text.setTransform(text.x, text.y, HOVER_SCALE, HOVER_SCALE);
+			});
+			hover.addEventListener("mouseout", () => {
+				text.text = "out";
+				text.color = BASIC_COLOR;
+				text.setTransform(text.x, text.y, 1, 1);
+			});
 		}
 		
 		for (var i = 1; i <= 13; i++){
@@ -95,15 +85,85 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	// actions tween:
 	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
 
-	// Text
-	this.Text_9 = new lib.text_9();
-	this.Text_9.name = "Text_9";
-	this.Text_9.parent = this;
-	this.Text_9.setTransform(560.5,66.2);
-
-	this.timeline.addTween(cjs.Tween.get(this.Text_9).wait(1));
-
 	// Buttons
+	this.Text_13 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_13.name = "Text_13";
+	this.Text_13.lineHeight = 32;
+	this.Text_13.parent = this;
+	this.Text_13.setTransform(512.7,418.7);
+
+	this.Text_2 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_2.name = "Text_2";
+	this.Text_2.lineHeight = 32;
+	this.Text_2.parent = this;
+	this.Text_2.setTransform(512.7,45.4);
+
+	this.Text_3 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_3.name = "Text_3";
+	this.Text_3.lineHeight = 32;
+	this.Text_3.parent = this;
+	this.Text_3.setTransform(512.7,79.3);
+
+	this.Text_4 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_4.name = "Text_4";
+	this.Text_4.lineHeight = 32;
+	this.Text_4.parent = this;
+	this.Text_4.setTransform(512.7,113.2);
+
+	this.Text_5 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_5.name = "Text_5";
+	this.Text_5.lineHeight = 32;
+	this.Text_5.parent = this;
+	this.Text_5.setTransform(512.7,147.1);
+
+	this.Text_6 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_6.name = "Text_6";
+	this.Text_6.lineHeight = 32;
+	this.Text_6.parent = this;
+	this.Text_6.setTransform(512.7,181);
+
+	this.Text_7 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_7.name = "Text_7";
+	this.Text_7.lineHeight = 32;
+	this.Text_7.parent = this;
+	this.Text_7.setTransform(512.7,214.9);
+
+	this.Text_8 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_8.name = "Text_8";
+	this.Text_8.lineHeight = 32;
+	this.Text_8.parent = this;
+	this.Text_8.setTransform(512.7,248.8);
+
+	this.Text_9 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_9.name = "Text_9";
+	this.Text_9.lineHeight = 32;
+	this.Text_9.parent = this;
+	this.Text_9.setTransform(512.7,282.7);
+
+	this.Text_10 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_10.name = "Text_10";
+	this.Text_10.lineHeight = 32;
+	this.Text_10.parent = this;
+	this.Text_10.setTransform(512.7,316.6);
+
+	this.Text_11 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_11.name = "Text_11";
+	this.Text_11.lineHeight = 32;
+	this.Text_11.parent = this;
+	this.Text_11.setTransform(512.7,350.5);
+
+	this.Text_12 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_12.name = "Text_12";
+	this.Text_12.lineHeight = 32;
+	this.Text_12.parent = this;
+	this.Text_12.setTransform(512.7,384.4);
+
+	this.Text_1 = new cjs.Text("text1", "25px 'Roboto'");
+	this.Text_1.name = "Text_1";
+	this.Text_1.lineHeight = 32;
+	this.Text_1.parent = this;
+	this.Text_1.setTransform(512.7,11.5);
+
 	this.Hover_13 = new lib.hover();
 	this.Hover_13.name = "Hover_13";
 	this.Hover_13.parent = this;
@@ -169,7 +229,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.Hover_9.parent = this;
 	this.Hover_9.setTransform(407.1,307.2,0.632,0.632,0,0,0,0,0.1);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.Hover_9},{t:this.Hover_7},{t:this.Hover_6},{t:this.Hover_3},{t:this.Hover_10},{t:this.Hover_5},{t:this.Hover_1},{t:this.Hover_4},{t:this.Hover_12},{t:this.Hover_11},{t:this.Hover_8},{t:this.Hover_2},{t:this.Hover_13}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.Hover_9},{t:this.Hover_7},{t:this.Hover_6},{t:this.Hover_3},{t:this.Hover_10},{t:this.Hover_5},{t:this.Hover_1},{t:this.Hover_4},{t:this.Hover_12},{t:this.Hover_11},{t:this.Hover_8},{t:this.Hover_2},{t:this.Hover_13},{t:this.Text_1},{t:this.Text_12},{t:this.Text_11},{t:this.Text_10},{t:this.Text_9},{t:this.Text_8},{t:this.Text_7},{t:this.Text_6},{t:this.Text_5},{t:this.Text_4},{t:this.Text_3},{t:this.Text_2},{t:this.Text_13}]}).wait(1));
 
 	// bg
 	this.instance = new lib.pianomechanics();
@@ -188,7 +248,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/pianomechanics.png?1633255882812", id:"pianomechanics"}
+		{src:"images/pianomechanics.png?1633259712372", id:"pianomechanics"}
 	],
 	preloads: []
 };
