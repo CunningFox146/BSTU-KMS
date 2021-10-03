@@ -56,19 +56,16 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 }).prototype = getMCSymbolPrototype(lib.text_9, new cjs.Rectangle(-19.4,-15.8,39,31.7), null);
 
 
-(lib.hover_9 = function(mode,startPosition,loop) {
+(lib.hover = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#32FF00").ss(1,1,1).p("ACPAAQAAA7gqAqQgqAqg7AAQg6AAgqgqQgqgqAAg7QAAg6AqgqQAqgqA6AAQA7AAAqAqQAqAqAAA6g");
+	this.shape.graphics.f("rgba(93,72,113,0.498)").s().p("AiWCWQg/g9ABhZQgBhYA/g+QA+g/BYABQBZgBA9A/QBAA+gBBYQABBZhAA9Qg9BAhZgBQhYABg+hAg");
 
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#0000FF").s().p("AhkBlQgpgqAAg7QAAg6ApgqQAqgpA6AAQA7AAAqApQApAqAAA6QAAA7gpAqQgqApg7AAQg6AAgqgpg");
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
-
-}).prototype = getMCSymbolPrototype(lib.hover_9, new cjs.Rectangle(-15.2,-15.2,30.5,30.5), null);
+}).prototype = getMCSymbolPrototype(lib.hover, new cjs.Rectangle(-21.3,-21.3,42.7,42.7), null);
 
 
 // stage content:
@@ -80,16 +77,19 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 		stage.enableMouseOver(60);
 		
 		// JS круто, спасибо наследованию контекста
-		let CreateHint = (number) => {
-			var text = this["Text_"+number];
-			var hover = this["Hover_"+number];
-			
+		var CreateHint = (number) => {
+			var text = this["Text_" + 9];
+			var hover = this["Hover_" + number];
+		
 			text.visible = false;
-			hover.addEventListener("mouseover", ()=> text.visible = true);
-			hover.addEventListener("mouseout", ()=> text.visible = false);
+			hover.alpha = 0.1;
+			hover.addEventListener("mouseover", () => text.visible = true);
+			hover.addEventListener("mouseout", () => text.visible = false);
 		}
 		
-		CreateHint(9);
+		for (var i = 1; i <= 13; i++){
+			CreateHint(i);
+		}
 	}
 
 	// actions tween:
@@ -104,12 +104,72 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.timeline.addTween(cjs.Tween.get(this.Text_9).wait(1));
 
 	// Buttons
-	this.Hover_9 = new lib.hover_9();
+	this.Hover_13 = new lib.hover();
+	this.Hover_13.name = "Hover_13";
+	this.Hover_13.parent = this;
+	this.Hover_13.setTransform(119.8,367,0.663,0.569);
+
+	this.Hover_2 = new lib.hover();
+	this.Hover_2.name = "Hover_2";
+	this.Hover_2.parent = this;
+	this.Hover_2.setTransform(122,273.7,0.663,0.569);
+
+	this.Hover_8 = new lib.hover();
+	this.Hover_8.name = "Hover_8";
+	this.Hover_8.parent = this;
+	this.Hover_8.setTransform(122,219.1,0.663,0.569);
+
+	this.Hover_11 = new lib.hover();
+	this.Hover_11.name = "Hover_11";
+	this.Hover_11.parent = this;
+	this.Hover_11.setTransform(122,183.2,0.663,0.569);
+
+	this.Hover_12 = new lib.hover();
+	this.Hover_12.name = "Hover_12";
+	this.Hover_12.parent = this;
+	this.Hover_12.setTransform(122,89.6,0.663,0.569);
+
+	this.Hover_4 = new lib.hover();
+	this.Hover_4.name = "Hover_4";
+	this.Hover_4.parent = this;
+	this.Hover_4.setTransform(407.5,21.7,0.663,0.569);
+
+	this.Hover_1 = new lib.hover();
+	this.Hover_1.name = "Hover_1";
+	this.Hover_1.parent = this;
+	this.Hover_1.setTransform(406.5,408.5,0.663,0.569);
+
+	this.Hover_5 = new lib.hover();
+	this.Hover_5.name = "Hover_5";
+	this.Hover_5.parent = this;
+	this.Hover_5.setTransform(406.5,363.7,0.663,0.569);
+
+	this.Hover_10 = new lib.hover();
+	this.Hover_10.name = "Hover_10";
+	this.Hover_10.parent = this;
+	this.Hover_10.setTransform(406.5,336.2,0.663,0.569);
+
+	this.Hover_3 = new lib.hover();
+	this.Hover_3.name = "Hover_3";
+	this.Hover_3.parent = this;
+	this.Hover_3.setTransform(406.5,215.9,0.663,0.569);
+
+	this.Hover_6 = new lib.hover();
+	this.Hover_6.name = "Hover_6";
+	this.Hover_6.parent = this;
+	this.Hover_6.setTransform(406.5,246.7,0.663,0.569);
+
+	this.Hover_7 = new lib.hover();
+	this.Hover_7.name = "Hover_7";
+	this.Hover_7.parent = this;
+	this.Hover_7.setTransform(406.5,277.8,0.663,0.663);
+
+	this.Hover_9 = new lib.hover();
 	this.Hover_9.name = "Hover_9";
 	this.Hover_9.parent = this;
-	this.Hover_9.setTransform(409.3,303.3);
+	this.Hover_9.setTransform(407.1,307.2,0.632,0.632,0,0,0,0,0.1);
 
-	this.timeline.addTween(cjs.Tween.get(this.Hover_9).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.Hover_9},{t:this.Hover_7},{t:this.Hover_6},{t:this.Hover_3},{t:this.Hover_10},{t:this.Hover_5},{t:this.Hover_1},{t:this.Hover_4},{t:this.Hover_12},{t:this.Hover_11},{t:this.Hover_8},{t:this.Hover_2},{t:this.Hover_13}]}).wait(1));
 
 	// bg
 	this.instance = new lib.pianomechanics();
@@ -128,7 +188,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/pianomechanics.png?1633254472064", id:"pianomechanics"}
+		{src:"images/pianomechanics.png?1633255882812", id:"pianomechanics"}
 	],
 	preloads: []
 };
