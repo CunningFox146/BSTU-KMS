@@ -71,10 +71,9 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			"Демпферная ложка",
 		]
 		
-		// JS круто, спасибо наследованию контекста
-		var CreateHint = (number) => {
-			var text = this["Text_" + number];
-			var hover = this["Hover_" + number];
+		let CreateHint = (number) => {
+			let text = this["Text_" + number];
+			let hover = this["Hover_" + number];
 			
 			hover.alpha = 0.1;
 			hover.stop();
@@ -103,7 +102,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 			});
 		}
 		
-		for (var i = 1; i <= 13; i++){
+		for (let i = 1; i <= 13; i++){
 			CreateHint(i);
 		}
 	}
@@ -277,7 +276,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/pianomechanics.png?1633273594638", id:"pianomechanics"}
+		{src:"images/pianomechanics.png", id:"pianomechanics"}
 	],
 	preloads: []
 };
