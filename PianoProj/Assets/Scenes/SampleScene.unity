@@ -323,6 +323,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piano
       objectReference: {fileID: 0}
+    - target: {fileID: 6992335462207100632, guid: 99200c2b9d9fb1a428f07b0f9da78d44, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992335462207100632, guid: 99200c2b9d9fb1a428f07b0f9da78d44, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992335462207100632, guid: 99200c2b9d9fb1a428f07b0f9da78d44, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992335462207100632, guid: 99200c2b9d9fb1a428f07b0f9da78d44, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6992335462207100632, guid: 99200c2b9d9fb1a428f07b0f9da78d44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7013160487107952163, guid: 99200c2b9d9fb1a428f07b0f9da78d44, type: 3}
       propertyPath: m_RootOrder
       value: 1
