@@ -76,6 +76,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 428803939662169996}
     m_Modifications:
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: pitch
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: octave
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7134837640616187050, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
       propertyPath: m_Name
       value: Octave (3)
@@ -204,6 +212,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 428803939662169996}
     m_Modifications:
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: octave
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7134837640616187050, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
       propertyPath: m_Name
       value: Octave
@@ -266,6 +278,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 428803939662169996}
     m_Modifications:
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: pitch
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: octave
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7134837640616187050, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
       propertyPath: m_Name
       value: Octave (4)
@@ -328,6 +348,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 428803939662169996}
     m_Modifications:
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: pitch
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: octave
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7134837640616187050, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
       propertyPath: m_Name
       value: Octave (2)
@@ -390,6 +418,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 428803939662169996}
     m_Modifications:
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: pitch
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: octave
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7134837640616187050, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
       propertyPath: m_Name
       value: Octave (1)
@@ -452,6 +488,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 428803939662169996}
     m_Modifications:
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: pitch
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 7134837640616187050, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
       propertyPath: m_Name
       value: Octave (6)
@@ -514,6 +554,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 428803939662169996}
     m_Modifications:
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: pitch
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351354892878484113, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
+      propertyPath: octave
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7134837640616187050, guid: dbdf27c5ebf9bdc4e85482ed31eeefe4, type: 3}
       propertyPath: m_Name
       value: Octave (5)

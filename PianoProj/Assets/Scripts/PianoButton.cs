@@ -5,13 +5,25 @@ using UnityEngine;
 
 public class PianoButton : MonoBehaviour, IClickable
 {
+    [HideInInspector] public float pitch;
+
+    private AudioSource _source;
     private Coroutine _clickCoroutine;
     private Vector3 _startRot;
+
+    private void Awake()
+    {
+        _source = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
         _startRot = transform.eulerAngles;
+
+        _source.clip = LoadClip(transform.parent.GetComponent<Octave>().octave);
     }
+
+    private AudioClip LoadClip(int octave) => Resources.Load<AudioClip>($"Notes/{octave}-{gameObject.name.ToLower()}");
 
     public void OnClick()
     {
@@ -21,6 +33,13 @@ public class PianoButton : MonoBehaviour, IClickable
         }
 
         _clickCoroutine = StartCoroutine(ClickCoroutine(0.15f));
+
+        PlaySound();
+    }
+
+    private void PlaySound()
+    {
+        _source.Play();
     }
 
     private IEnumerator ClickCoroutine(float duration)
