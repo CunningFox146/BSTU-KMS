@@ -28,7 +28,7 @@ public abstract class PianoLeg : MonoBehaviour, IClickable
     }
 
     protected Coroutine StartClickCoroutine(float duration, float angle = -10f) => _clickCoroutine = StartCoroutine(ClickCoroutine(duration, angle));
-    protected Coroutine StartClickBackCoroutine(float duration) => _clickCoroutine = StartCoroutine(ClickBackCoroutine(duration));
+    protected void StartClickBackCoroutine(float duration) => transform.eulerAngles = _startRot;
 
     protected IEnumerator ClickCoroutine(float duration, float angle)
     {
@@ -48,20 +48,21 @@ public abstract class PianoLeg : MonoBehaviour, IClickable
         }
     }
 
-    protected IEnumerator ClickBackCoroutine(float duration)
-    {
-        CancelClickCoroutine();
+    //protected IEnumerator ClickBackCoroutine(float duration)
+    //{
+    //    CancelClickCoroutine();
 
-        var startRot = transform.eulerAngles;
-        float startTime = Time.time;
+    //    var startRot = transform.eulerAngles.x;
+    //    float startTime = Time.time;
 
-        while (true)
-        {
-            float percent = Mathf.Clamp01((Time.time - startTime) / duration);
-            transform.eulerAngles = Vector3.Lerp(startRot, _startRot, percent);
+    //    while (true)
+    //    {
+    //        float percent = Mathf.Clamp01((Time.time - startTime) / duration);
+    //        Debug.Log(percent);
+    //        transform.eulerAngles = new Vector3(Mathf.Lerp(startRot, _startRot.x, percent), _startRot.y, _startRot.z);
 
-            if (Mathf.Approximately(percent, 1f)) break;
-            yield return null;
-        }
-    }
+    //        if (Mathf.Approximately(percent, 1f)) break;
+    //        yield return null;
+    //    }
+    //}
 }
