@@ -44,7 +44,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471229c69578bb648a4f6a68513d6e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noteDo: {fileID: 8300000, guid: 060b0f6741238b643851ec2f50a8fbfe, type: 3}
   pitch: 0
 --- !u!64 &5620570919388408376
 MeshCollider:
