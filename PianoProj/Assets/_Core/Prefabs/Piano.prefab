@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7013160487107952163}
   - component: {fileID: 6081455098902895596}
-  - component: {fileID: 771993857}
   m_Layer: 0
   m_Name: Piano
   m_TagString: Untagged
@@ -34,6 +33,7 @@ Transform:
   - {fileID: 428803939662169996}
   - {fileID: 6992335462207100632}
   - {fileID: 4027710858099591506}
+  - {fileID: 1501547761365745285}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,13 +50,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 038c6b77f268692498f5b3a4f6a9d823, type: 2}
---- !u!65 &771993857
+--- !u!1 &4131394624006500414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1501547761365745285}
+  - component: {fileID: 4690234360378874712}
+  m_Layer: 2
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1501547761365745285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131394624006500414}
+  m_LocalRotation: {x: -0, y: -0.0066379746, z: -0, w: 0.99997795}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7013160487107952163}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: -0.761, z: 0}
+--- !u!65 &4690234360378874712
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2680836510640127096}
+  m_GameObject: {fileID: 4131394624006500414}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

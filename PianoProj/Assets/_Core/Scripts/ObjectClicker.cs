@@ -11,7 +11,7 @@ public class ObjectClicker : MonoBehaviour
 
     private void Awake()
     {
-        _camera = Camera.main;
+        _camera = GetComponent<Camera>();
     }
 
     private void Update()
