@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PianoButton : MonoBehaviour, IClickable
+public class PianoButton : MonoBehaviour, IInteractavble
 {
     public TextMesh text;
     [HideInInspector] public float pitch;

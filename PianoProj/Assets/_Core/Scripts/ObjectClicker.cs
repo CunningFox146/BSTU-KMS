@@ -19,7 +19,7 @@ public class ObjectClicker : MonoBehaviour
         if (!Input.GetMouseButtonDown(0)) return;
         
         if (Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit) && hit.transform
-            && hit.transform.parent && hit.transform.parent.TryGetComponent(out IClickable clickable))
+            && hit.transform.parent && hit.transform.parent.TryGetComponent(out IInteractavble clickable))
         {
             clickable.OnClick();
         }

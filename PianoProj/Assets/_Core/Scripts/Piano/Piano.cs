@@ -15,11 +15,12 @@ public class Piano : MonoBehaviour
         { KeyCode.G, "G"},
         { KeyCode.H, "A"},
         { KeyCode.J, "B"},
+
         { KeyCode.W, "CS"},
         { KeyCode.E, "DS"},
-        { KeyCode.R, "FS"},
-        { KeyCode.T, "GS"},
-        { KeyCode.Y, "AS"},
+        { KeyCode.T, "FS"},
+        { KeyCode.Y, "GS"},
+        { KeyCode.U, "AS"},
     };
 
     public event Action<bool> OnLeftLegChanged;

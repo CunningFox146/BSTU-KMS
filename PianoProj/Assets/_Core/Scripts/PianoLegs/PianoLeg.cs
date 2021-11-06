@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public abstract class PianoLeg : MonoBehaviour, IClickable
+public abstract class PianoLeg : MonoBehaviour, IInteractavble
 {
     protected Vector3 _startRot;
 
