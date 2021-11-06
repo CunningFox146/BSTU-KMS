@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Camera _playCamera;
 
     private bool _isPlayCamera;
+    private Vector3 _playCamPos;
 
     public bool IsPlayCamera
     {
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
             _fpsControll.SetActive(!value);
             _playCamera.gameObject.SetActive(value);
+            _playCamera.transform.position = _playCamPos;
             Cursor.lockState = value ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = value;
         }
@@ -42,6 +44,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Inst = this;
+
+        _playCamPos = _playCamera.transform.position;
     }
 
     private void Update()
