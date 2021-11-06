@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayModeCamera : MonoBehaviour
 {
@@ -27,7 +22,7 @@ public class PlayModeCamera : MonoBehaviour
         float newPos = transform.position.x + deltaX * Time.deltaTime;
         if (!Mathf.Approximately(deltaX, 0f) && newPos > _bounds.x && newPos < _bounds.y)
         {
-            transform.Translate(Vector3.right * deltaX * Time.deltaTime * _speed);;
+            transform.Translate(Vector3.right * deltaX * Time.deltaTime * _speed); ;
         }
     }
 }

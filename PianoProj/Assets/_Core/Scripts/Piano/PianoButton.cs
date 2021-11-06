@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PianoButton : MonoBehaviour, IClickable
@@ -21,14 +19,15 @@ public class PianoButton : MonoBehaviour, IClickable
         _piano = transform.root.GetComponent<Piano>();
 
         _piano.OnLeftLegChanged += OnLeftLegChangedHandler;
-    }
 
-    private void Start()
-    {
+
         _startRot = transform.eulerAngles;
 
-        _source.clip = LoadClip(transform.parent.GetComponent<Octave>().octave);
+        var octave = transform.parent.GetComponent<Octave>();
+        octave.buttons.Add(gameObject.name, this);
+        _source.clip = LoadClip(octave.octave);
     }
+
 
     private void OnLeftLegChangedHandler(bool isActive)
     {
