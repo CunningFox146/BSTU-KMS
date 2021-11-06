@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
             _fpsControll.SetActive(!value);
             _playCamera.gameObject.SetActive(value);
+            Cursor.lockState = value ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = value;
         }
     }
 
