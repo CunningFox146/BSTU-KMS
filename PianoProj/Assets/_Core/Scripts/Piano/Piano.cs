@@ -44,9 +44,21 @@ public class Piano : MonoBehaviour
         }
     }
 
-    private void Awake()
+    public Octave SelectedOctave
     {
-        _selectedOctave = _octaves[3];
+        get => _selectedOctave;
+        set
+        {
+            if (_selectedOctave == value) return;
+            _selectedOctave?.SetIsSelected(false);
+            _selectedOctave = value;
+            _selectedOctave.SetIsSelected(true);
+        }
+    }
+
+    private void Start()
+    {
+        SelectedOctave = _octaves[3];
     }
 
     private void Update()
@@ -57,7 +69,7 @@ public class Piano : MonoBehaviour
         {
             if (Input.GetKeyDown(pair.Key))
             {
-                _selectedOctave.buttons[pair.Value].OnClick();
+                SelectedOctave.buttons[pair.Value].OnClick();
             }
         }
     }

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PianoButton : MonoBehaviour, IClickable
 {
+    public TextMesh text;
     [HideInInspector] public float pitch;
 
     private AudioSource _source;
@@ -20,6 +21,7 @@ public class PianoButton : MonoBehaviour, IClickable
 
         _piano.OnLeftLegChanged += OnLeftLegChangedHandler;
 
+        text.gameObject.SetActive(false);
 
         _startRot = transform.eulerAngles;
 
