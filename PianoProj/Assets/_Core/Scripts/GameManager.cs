@@ -31,6 +31,15 @@ public class GameManager : MonoBehaviour
         {
             _isPlayCamera = value;
 
+            if (_isPlayCamera)
+            {
+                Hint.Inst.ShowHint("Двигайте мышь по краям чтоб перемещать обзор.\nНаводите мышью на октавы для их выбора.\nНажимайте мышью или клавиатурой (по буквам) по клавишам для игры", 10f);
+            }
+            else
+            {
+                Hint.Inst.ShowHint("Свободный обзор комнаты. Для игры на пианино нажмите на P.", 3f);
+            }
+
             _fpsControll.SetActive(!value);
             _playCamera.gameObject.SetActive(value);
             _playCamera.transform.position = _playCamPos;
@@ -44,6 +53,11 @@ public class GameManager : MonoBehaviour
         Inst = this;
 
         _playCamPos = _playCamera.transform.position;
+    }
+
+    private void Start()
+    {
+        IsPlayCamera = false;
     }
 
     private void Update()

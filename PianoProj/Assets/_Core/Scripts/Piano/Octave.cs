@@ -1,16 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class Octave : MonoBehaviour, IHoverable
 {
     public int octave = 1;
     public Dictionary<string, PianoButton> buttons = new Dictionary<string, PianoButton>();
 
     private Piano _piano;
+    private Outline _outline;
 
     private void Awake()
     {
         _piano = transform.root.GetComponent<Piano>();
+        _outline = GetComponent<Outline>();
     }
 
     public void Start()
@@ -34,6 +37,7 @@ public class Octave : MonoBehaviour, IHoverable
         {
             button.text.gameObject.SetActive(selected);
         }
+        _outline.enabled = selected;
     }
 
     public void OnHover()
