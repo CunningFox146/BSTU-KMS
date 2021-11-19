@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "b36c0312-bbce-a985-6c8a-fded632ef5b3": {
+      "ProjectGuid": "b36c0312-bbce-a985-6c8a-fded632ef5b3",
+      "DisplayName": "Assembly-CSharp-firstpass",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
