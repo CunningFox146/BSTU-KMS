@@ -56,13 +56,14 @@ public class Hint : MonoBehaviour
         while (true)
         {
             float percent = Mathf.Clamp01((Time.time - startTime) / fadeDuration);
+
+            float alpha = isFadeOut ? (1f - percent) : percent;
+            _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, alpha);
+
             if (percent >= 1f)
             {
                 yield break;
             }
-
-            float alpha = isFadeOut ? (1f - percent) : percent;
-            _text.color = new Color(_text.color.r, _text.color.g, _text.color.b, alpha);
 
             yield return null;
         }
