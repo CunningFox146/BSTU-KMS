@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -66,5 +68,6 @@ public class GameManager : MonoBehaviour
         {
             IsPlayCamera = !IsPlayCamera;
         }
+
     }
 }

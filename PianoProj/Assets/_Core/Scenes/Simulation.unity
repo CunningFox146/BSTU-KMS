@@ -181,7 +181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 557.1992, y: 281.8256}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &231250888
@@ -2013,6 +2013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piano
       objectReference: {fileID: 0}
+    - target: {fileID: 6081455098902895596, guid: 99200c2b9d9fb1a428f07b0f9da78d44, type: 3}
+      propertyPath: _notes
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d79077d4e0ee71419e360d8366b7892, type: 2}
     - target: {fileID: 7013160487107952163, guid: 99200c2b9d9fb1a428f07b0f9da78d44, type: 3}
       propertyPath: m_RootOrder
       value: 13
