@@ -43,6 +43,8 @@ public class PianoButton : MonoBehaviour, IInteractavble
 
     public void OnClick()
     {
+        TaskManager.Instance.SetTaskComplete(2);
+
         if (_clickCoroutine != null)
         {
             StopCoroutine(_clickCoroutine);

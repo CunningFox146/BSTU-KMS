@@ -17,6 +17,8 @@ public class PianoLegLeft : PianoLeg
 
     public override void OnClick()
     {
+        TaskManager.Instance.SetTaskComplete(3);
+
         _isPressed = !_isPressed;
         _piano.IsLeftLeg = _isPressed;
 

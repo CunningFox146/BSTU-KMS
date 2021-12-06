@@ -25,12 +25,14 @@ public class Piano : MonoBehaviour
         { KeyCode.U, "AS"},
     };
 
+    public static Piano Instance { get; private set; }
+
     public event Action<bool> OnLeftLegChanged;
 
     [SerializeField] private List<Octave> _octaves;
-    [SerializeField] private Notes _notes;
 
     public AudioMixer audioMixer;
+    public Notes notes;
 
     private bool _isLeftLeg = false;
     private Octave _selectedOctave;
@@ -61,6 +63,11 @@ public class Piano : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         SelectedOctave = _octaves[3];
@@ -69,6 +76,7 @@ public class Piano : MonoBehaviour
     private void Update()
     {
         if (!GameManager.Inst.IsPlayCamera) return;
+
 
         foreach (KeyValuePair<KeyCode, string> pair in KeyCodes)
         {
@@ -80,16 +88,22 @@ public class Piano : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (_playCoroutine != null)
-            {
-                StopCoroutine(_playCoroutine);
-            }
-            _playCoroutine = StartCoroutine(PlayCoroutine(_notes));
+            StopPlaying();
+            _playCoroutine = StartCoroutine(PlayCoroutine(notes));
+        }
+    }
+
+    public void StopPlaying()
+    {
+        if (_playCoroutine != null)
+        {
+            StopCoroutine(_playCoroutine);
         }
     }
 
     private IEnumerator PlayCoroutine(Notes notes)
     {
+        TaskManager.Instance.SetTaskComplete(5);
         for (int i = 0; i < notes.notes.Count; i++)
         {
             var notesData = notes.notes[i];

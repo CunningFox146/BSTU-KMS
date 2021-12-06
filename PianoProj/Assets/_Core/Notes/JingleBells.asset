@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JingleBells
   m_EditorClassIdentifier: 
   notesName: Jingle bells
-  tempo: 0.5
+  tempo: 0.35
   notes:
   - notes:
     - 4-e

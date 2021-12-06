@@ -17,6 +17,8 @@ public class PianoLegRight : PianoLeg
 
     public override void OnClick()
     {
+        TaskManager.Instance.SetTaskComplete(3);
+
         _isPressed = !_isPressed;
         _piano.audioMixer.SetFloat("PianoVolume", _isPressed ? -15f : 0f);
 
