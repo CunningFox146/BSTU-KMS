@@ -17,21 +17,22 @@
 		<a href="theory.html">Теоретические сведения</a>
 		<a href="structure.html">Структура установки</a>
 		<a href="simulation.html">Симулятор установки</a>
-		<a href="knowledgeBase.html">База знаний</a>
-		<a class="active" href="contacts.html">Контакты</a>
+		<a class="active" href="knowledgeBase.html">База знаний</a>
+		<a href="contacts.html">Контакты</a>
 	</div>
 
-	<div class="contentContacts">
-		<h1 class="fillHeader"><b>Контакты</b></h1>
-		<div>
-			<image class="author scaleOnHover" src="images/author.jpg" />
+	<div class="contentText">
+		<h1 class="fillHeader"><b>База знаний</b></h1>
+		<div class="center">
+			<form>
+				<label for="fname"><b>Введите ваш вопрос:</b></label></br>
+				<input id="question" type="text" value="Кто автор курсового проекта?">
+				<button type="button" class="btn search center" onclick="FindAnswer()">Поиск вопроса</button>
+			</form>
+			<p id="answer" class="answer center">Ответ</p>
 		</div>
-		<p class="contactsText">
-			Работа Дежемесова Макара Сергеевича
-			<br />
-			ФИТ 3-1
-		</p>
-		<button type="button" class="btn red nextButton" onclick="OnNextButtonPushed()">В начало</button>
+		</br>
+		<button type="button" class="btn red nextButton" onclick="OnNextButtonPushed()">Далее</button>
 	</div>
 </body>
 

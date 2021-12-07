@@ -3,6 +3,8 @@ const pages = [
 	"theory.html",
 	"structure.html",
 	"simulation.html",
+	"simulation.html",
+	"knowledgeBase.html",
 	"contacts.html",
 ]
 
@@ -21,4 +23,17 @@ function OnNextButtonPushed() {
 		idx = 0;
 	}
 	window.open(pages[idx], "_self");
+}
+
+
+let answer;
+let question;
+
+document.addEventListener("DOMContentLoaded", () => {
+	answer = document.getElementById("answer");
+	question = document.getElementById("question");
+})
+
+function FindAnswer() {
+	answer.innerHTML = window.getAnswer(question.innerHTML);
 }
