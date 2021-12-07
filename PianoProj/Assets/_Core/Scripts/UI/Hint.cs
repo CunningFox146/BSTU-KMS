@@ -2,16 +2,19 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(CanvasGroup), typeof(AudioSource))]
 public class Hint : MonoBehaviour
 {
     [SerializeField] private Text _text;
 
     private Coroutine _hideCoroutine;
     private CanvasGroup _group;
+    private AudioSource _audio;
 
     private void Awake()
     {
         _group = GetComponent<CanvasGroup>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -23,6 +26,8 @@ public class Hint : MonoBehaviour
     public void ShowHint(string text, float duration)
     {
         if (_text.text == text) return;
+
+        _audio.Play();
 
         _text.text = text;
 

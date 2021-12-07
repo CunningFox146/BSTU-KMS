@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameManager : MonoBehaviour
 {
     private static GameManager _inst;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private bool _isPlayCamera;
     private Vector3 _playCamPos;
+    private AudioSource _audio;
 
     public bool IsPlayCamera
     {
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         Inst = this;
 
         _playCamPos = _playCamera.transform.position;
+        _audio = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -55,8 +58,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && TaskManager.Instance.CurrentTaskIndex > 0)
         {
+            _audio.Play();
             TaskManager.Instance.SetTaskComplete(1);
             IsPlayCamera = !IsPlayCamera;
         }

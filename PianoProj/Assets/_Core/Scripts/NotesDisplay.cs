@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MeshRenderer))]
+[RequireComponent(typeof(MeshRenderer), typeof(AudioSource))]
 public class NotesDisplay : MonoBehaviour
 {
     [SerializeField] private List<Material> _notesMaterials;
     [SerializeField] private List<Notes> _notes;
 
     private MeshRenderer _renderer;
+    private AudioSource _audio;
     private int _currIdx = 0;
 
     private void Awake()
     {
         _renderer = GetComponent<MeshRenderer>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -26,6 +28,8 @@ public class NotesDisplay : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
+            _audio.pitch = Random.Range(0.9f, 1.1f);
+            _audio.Play();
             TaskManager.Instance.SetTaskComplete(4);
             _currIdx++;
             if (_currIdx >= _notesMaterials.Count)
