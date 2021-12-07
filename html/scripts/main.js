@@ -35,5 +35,5 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function FindAnswer() {
-	answer.innerHTML = window.getAnswer(question.innerHTML);
+	answer.innerHTML = window.getAnswer(question.value);
 }
