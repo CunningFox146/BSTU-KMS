@@ -22,7 +22,7 @@ public class TaskManager : MonoBehaviour
 
     public void SetTaskComplete(int idx)
     {
-        if (CurrentTaskIndex < idx) return;
+        if (CurrentTaskIndex != idx) return;
         ++idx;
         if (idx < Tasks.Count)
         {
