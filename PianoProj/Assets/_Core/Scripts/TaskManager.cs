@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-    public static event Action<TaskData> TaskChanged;
+    public static event Action<int, TaskData> TaskChanged;
 
     public static TaskManager Instance { get; private set; }
 
@@ -27,7 +27,7 @@ public class TaskManager : MonoBehaviour
         if (idx < Tasks.Count)
         {
             _currentTaskIndex = idx;
-            TaskChanged?.Invoke(Tasks[idx]);
+            TaskChanged?.Invoke(idx, Tasks[idx]);
         }
     }
 }

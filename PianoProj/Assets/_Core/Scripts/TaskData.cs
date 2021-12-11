@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptable Objects/TaskData")]
+[CreateAssetMenu(menuName = "ScriptableObjects/TaskData")]
 public class TaskData : ScriptableObject
 {
     public string taskName;

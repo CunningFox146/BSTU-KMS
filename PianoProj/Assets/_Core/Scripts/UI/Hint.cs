@@ -1,11 +1,13 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup), typeof(AudioSource))]
 public class Hint : MonoBehaviour
 {
-    [SerializeField] private Text _text;
+    [SerializeField] private TextMeshProUGUI _body;
+    [SerializeField] private TextMeshProUGUI _head;
 
     private Coroutine _hideCoroutine;
     private CanvasGroup _group;
@@ -19,17 +21,18 @@ public class Hint : MonoBehaviour
 
     private void Start()
     {
-        TaskManager.TaskChanged += (data) => ShowHint(data.taskName, 10f);
-        ShowHint(TaskManager.Instance.Tasks[TaskManager.Instance.CurrentTaskIndex].taskName, 10f);
+        TaskManager.TaskChanged += (num, data) => ShowHint(num, data.taskName, 10f);
+        ShowHint(TaskManager.Instance.CurrentTaskIndex, TaskManager.Instance.Tasks[TaskManager.Instance.CurrentTaskIndex].taskName, 10f);
     }
 
-    public void ShowHint(string text, float duration)
+    public void ShowHint(int num, string text, float duration)
     {
-        if (_text.text == text) return;
+        if (_body.text == text) return;
 
         _audio.Play();
 
-        _text.text = text;
+        _body.text = text;
+        _head.text = $"Задание #{num + 1}";
 
         if (_hideCoroutine != null)
         {
