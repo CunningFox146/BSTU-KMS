@@ -1,13 +1,12 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup), typeof(AudioSource))]
 public class Hint : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _body;
-    [SerializeField] private TextMeshProUGUI _head;
+    [SerializeField] private TMP_Text _body;
+    [SerializeField] private TMP_Text _head;
 
     private Coroutine _hideCoroutine;
     private CanvasGroup _group;
