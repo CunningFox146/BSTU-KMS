@@ -54,6 +54,18 @@ public class ARManager : MonoBehaviour
         Inst._spawnedObj = Instantiate(Inst._objectToSpawn, pose.position, pose.rotation);
     }
 
+    private void UpdateInteractable()
+    {
+        if (Input.touchCount <= 0) return;
+
+        var touch = Input.GetTouch(0);
+        Ray ray = Camera.main.ScreenPointToRay(touch.position);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            
+        }
+    }
+
     public static void RemoveObject()
     {
         if (Inst._spawnedObj == null) return;

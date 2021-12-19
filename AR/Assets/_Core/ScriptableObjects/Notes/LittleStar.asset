@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddb1beafcdc61f47854cfa9a03e9bbe, type: 3}
+  m_Name: LittleStar
+  m_EditorClassIdentifier: 
+  notesName: LittleStar
+  tempo: 0.35
+  notes:
+  - notes:
+    - 4-c
+    - 3-g
+  - notes:
+    - 4-c
+  - notes:
+    - 4-g
+    - 4-c
+  - notes:
+    - 4-g
+  - notes:
+    - 4-a
+    - 3-a
+  - notes:
+    - 4-a
+  - notes:
+    - 4-g
+    - 4-c
+  - notes: []
+  - notes:
+    - 4-f
+    - 3-f
+  - notes:
+    - 4-f
+  - notes:
+    - 4-e
+    - 4-c
+  - notes:
+    - 4-e
+  - notes:
+    - 4-d
+    - 3-g
+  - notes:
+    - 4-d
+  - notes:
+    - 4-c
+  - notes: []
+  - notes:
+    - 4-g
+    - 3-g
+  - notes:
+    - 4-g
+  - notes:
+    - 4-f
+    - 3-f
+  - notes:
+    - 4-f
+  - notes:
+    - 4-e
+    - 3-c
+  - notes:
+    - 4-e
+  - notes:
+    - 4-d
+    - 4-g
+  - notes: []
+  - notes:
+    - 4-g
+    - 3-g
+  - notes:
+    - 4-g
+  - notes:
+    - 4-f
+    - 4-c
+  - notes:
+    - 4-f
+  - notes:
+    - 4-e
+    - 3-c
+  - notes:
+    - 4-e
+  - notes:
+    - 4-d
+    - 4-g
+  - notes: []
+  - notes:
+    - 4-c
+    - 3-g
+  - notes:
+    - 4-c
+  - notes:
+    - 4-g
+    - 4-c
+  - notes:
+    - 4-g
+  - notes:
+    - 4-a
+    - 3-a
+  - notes:
+    - 4-a
+  - notes:
+    - 4-g
+    - 4-c
+  - notes: []
+  - notes:
+    - 4-f
+    - 3-f
+  - notes:
+    - 4-f
+  - notes:
+    - 4-e
+    - 4-c
+  - notes:
+    - 4-e
+    - 4-g
+  - notes:
+    - 4-d
+  - notes:
+    - 4-d
+  - notes:
+    - 4-c
+    - 3-c
