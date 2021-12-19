@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,7 +54,12 @@ public class ARManager : MonoBehaviour
         if (!IsPoseValid || Inst._spawnedObj) return;
 
         var pose = Inst._pose;
-        Inst._spawnedObj = Instantiate(Inst._objectToSpawn, pose.position, pose.rotation);
+        var obj = Instantiate(Inst._objectToSpawn, pose.position, pose.rotation);
+
+        obj.transform.localScale = Vector3.zero;
+        obj.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack);
+
+        Inst._spawnedObj = obj;
 
         ObjectChanged?.Invoke(true);
     }
@@ -61,8 +67,12 @@ public class ARManager : MonoBehaviour
     public static void RemoveObject()
     {
         if (Inst._spawnedObj == null) return;
-        Destroy(Inst._spawnedObj);
+        var obj = Inst._spawnedObj;
         Inst._spawnedObj = null;
+
+        obj.transform.DOScale(Vector3.zero, 0.5f)
+            .SetEase(Ease.InBack)
+            .OnComplete(()=>Destroy(obj));
 
         ObjectChanged?.Invoke(false);
     }
