@@ -8,6 +8,7 @@ using UnityEngine.XR.ARSubsystems;
 public class ARManager : MonoBehaviour
 {
     public static event Action<bool> PoseValidChange;
+    public static event Action<bool> ObjectChanged;
 
     public static ARManager Inst { get; private set; }
 
@@ -53,6 +54,8 @@ public class ARManager : MonoBehaviour
 
         var pose = Inst._pose;
         Inst._spawnedObj = Instantiate(Inst._objectToSpawn, pose.position, pose.rotation);
+
+        ObjectChanged?.Invoke(true);
     }
 
     public static void RemoveObject()
@@ -60,6 +63,8 @@ public class ARManager : MonoBehaviour
         if (Inst._spawnedObj == null) return;
         Destroy(Inst._spawnedObj);
         Inst._spawnedObj = null;
+
+        ObjectChanged?.Invoke(false);
     }
 
     void UpdatePlacementIndicator()
