@@ -1,10 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(MeshCollider))]
+[RequireComponent(typeof(BoxCollider))]
 public class PianoButton : MonoBehaviour, IInteractable
 {
-    public TextMesh text;
     [HideInInspector] public float pitch;
 
     private AudioSource _source;
@@ -21,10 +20,8 @@ public class PianoButton : MonoBehaviour, IInteractable
         _piano = transform.root.GetComponent<Piano>();
 
         _piano.OnLeftLegChanged += OnLeftLegChangedHandler;
-
-        text.gameObject.SetActive(false);
-
-        _startRot = transform.eulerAngles;
+        
+        _startRot = transform.localEulerAngles;
 
         var octave = transform.parent.GetComponent<Octave>();
         octave.buttons.Add(gameObject.name, this);
@@ -85,14 +82,14 @@ public class PianoButton : MonoBehaviour, IInteractable
 
     private IEnumerator ClickCoroutine(float duration)
     {
-        var startRot = transform.eulerAngles;
-        var targetRot = new Vector3(10f, _startRot.y, _startRot.z);
+        var startRot = transform.localEulerAngles;
+        var targetRot = _startRot + Vector3.right * 10f;
         float startTime = Time.time;
 
         while (true)
         {
             float percent = Mathf.Clamp01((Time.time - startTime) / duration);
-            transform.eulerAngles = Vector3.Lerp(startRot, targetRot, percent);
+            transform.localEulerAngles = Vector3.Lerp(startRot, targetRot, percent);
 
             if (Mathf.Approximately(percent, 1f))
             {
@@ -104,13 +101,13 @@ public class PianoButton : MonoBehaviour, IInteractable
     }
     private IEnumerator ClickBackCoroutine(float duration)
     {
-        var startRot = transform.eulerAngles;
+        var startRot = transform.localEulerAngles;
         float startTime = Time.time;
 
         while (true)
         {
             float percent = Mathf.Clamp01((Time.time - startTime) / duration);
-            transform.eulerAngles = Vector3.Lerp(startRot, _startRot, percent);
+            transform.localEulerAngles = Vector3.Lerp(startRot, _startRot, percent);
 
             if (Mathf.Approximately(percent, 1f)) break;
             yield return null;

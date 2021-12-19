@@ -237,3 +237,31 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4164.348359 seconds.
+  path: Assets/_Core/Prefabs
+  artifactKey: Guid(08aaa01794438fc4a99061ff5129b278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/Prefabs using Guid(08aaa01794438fc4a99061ff5129b278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f60bbd4614bedfa4f54d25b29517dda') in 0.071775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/_Core/Prefabs/PianoLegRight.prefab
+  artifactKey: Guid(51609cab96fed9040b3ac3caf1a930ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/Prefabs/PianoLegRight.prefab using Guid(51609cab96fed9040b3ac3caf1a930ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23f407f751160eed5cc558b8dba3ea2a') in 0.189883 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/_Core/Prefabs/Octave.prefab
+  artifactKey: Guid(dbdf27c5ebf9bdc4e85482ed31eeefe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/Prefabs/Octave.prefab using Guid(dbdf27c5ebf9bdc4e85482ed31eeefe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa4f2cd176a6c435db8f45b46d45ccb0') in 0.049495 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/_Core/Prefabs/PianoLegLeft.prefab
+  artifactKey: Guid(09bf3045eb6835b41b4c837ec01a4691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Core/Prefabs/PianoLegLeft.prefab using Guid(09bf3045eb6835b41b4c837ec01a4691) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ec3d05d217c9f4cf894db11249d9e17') in 0.010777 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
