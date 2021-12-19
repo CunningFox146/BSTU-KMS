@@ -984,7 +984,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectToSpawn: {fileID: 8707605029880264639, guid: f231ee0e59624e34fa2827dcfaa75571, type: 3}
   _indicator: {fileID: 1383447234}
-  _pointCloudPrefab: {fileID: 3001954441162217499, guid: bccedbb7b8eb31f4cb3836acdad7cd4e, type: 3}
 --- !u!1 &1937882383
 GameObject:
   m_ObjectHideFlags: 0
