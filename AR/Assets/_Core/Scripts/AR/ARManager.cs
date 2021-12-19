@@ -14,9 +14,10 @@ public class ARManager : MonoBehaviour
     [SerializeField] GameObject _objectToSpawn;
     [SerializeField] GameObject _indicator;
 
+    private ARRaycastManager _raycastManager;
+
     private GameObject _spawnedObj;
     private Pose _pose;
-    private ARRaycastManager _raycastManager;
     private bool _isPoseValid = false;
 
     public static ARRaycastManager RaycastManager => Inst._raycastManager;
@@ -52,18 +53,6 @@ public class ARManager : MonoBehaviour
 
         var pose = Inst._pose;
         Inst._spawnedObj = Instantiate(Inst._objectToSpawn, pose.position, pose.rotation);
-    }
-
-    private void UpdateInteractable()
-    {
-        if (Input.touchCount <= 0) return;
-
-        var touch = Input.GetTouch(0);
-        Ray ray = Camera.main.ScreenPointToRay(touch.position);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            
-        }
     }
 
     public static void RemoveObject()
