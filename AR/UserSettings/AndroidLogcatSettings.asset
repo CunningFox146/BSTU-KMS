@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "42ad6cd",
         "name": "com.CunningFox146.PianoSimulatorARBSTUKMS",
-        "processId": 31547,
+        "processId": 880,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -24,6 +24,18 @@
             "deviceId": "42ad6cd",
             "name": "com.CunningFox146.PianoSimulatorARBSTUKMS",
             "processId": 31547,
+            "exited": false
+        },
+        {
+            "deviceId": "42ad6cd",
+            "name": "com.CunningFox146.PianoSimulatorARBSTUKMS",
+            "processId": 32167,
+            "exited": false
+        },
+        {
+            "deviceId": "42ad6cd",
+            "name": "com.CunningFox146.PianoSimulatorARBSTUKMS",
+            "processId": 880,
             "exited": false
         }
     ],
