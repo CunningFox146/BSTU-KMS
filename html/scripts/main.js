@@ -24,26 +24,3 @@ function OnNextButtonPushed() {
 	}
 	window.open(pages[idx], "_self");
 }
-
-
-let answer;
-let question;
-
-document.addEventListener("DOMContentLoaded", () => {
-	answer = document.getElementById("answer");
-	question = document.getElementById("question");
-})
-
-let voices = window.speechSynthesis.getVoices();
-let rusVoice = voices[20];
-
-function FindAnswer() {
-	let answerText = window.getAnswer(question.value);
-	let msg = new SpeechSynthesisUtterance();
-	msg.lang = "ru-RU";
-	msg.voice = rusVoice;
-	msg.text = answerText;
-
-	window.speechSynthesis.speak(msg);
-	answer.innerHTML = answerText;
-}

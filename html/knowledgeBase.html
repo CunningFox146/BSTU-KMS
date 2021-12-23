@@ -26,12 +26,20 @@
 		<div class="center">
 			<form>
 				<label for="fname"><b>Введите ваш вопрос:</b></label></br>
-				<input id="question" type="text" value="Кто автор курсового проекта?">
+				<div class="kb_input">
+					<input id="question" type="text" value="Кто автор курсового проекта?">
+					<button type="button" id="voiceBtn">
+						<image src='images/microphone.svg'>
+					</button>
+				</div>
 				<button type="button" class="btn search center" onclick="FindAnswer()">Поиск вопроса</button>
+				<button type="button" class="btn voice center" onclick="GenerateVoice()">Озвучить ответ</button>
 			</form>
 			<p id="answer" class="answer center">Ответ</p>
 		</div>
 		</br>
+		<div class="texts">
+		</div>
 		<button type="button" class="btn red nextButton" onclick="OnNextButtonPushed()">Далее</button>
 	</div>
 </body>

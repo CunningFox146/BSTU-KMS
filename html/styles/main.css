@@ -14,13 +14,6 @@ iframe {
     display: block;
 }
 
-input {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-
 .form{
   border: #333;
   border-radius: 1px;
@@ -264,6 +257,15 @@ input {
   background-color: #74ffae;
 }
 
+.btn.voice{
+  background-color: #9900ff;
+  height: 25px;
+  margin-top: 10px;
+}
+.btn.voice:hover, .btn.voice:focus {
+  background-color: #bd59ff;
+}
+
 .beginButton{
 	height:50px;
 	font-size: 20px;
@@ -283,3 +285,28 @@ input {
   text-align: center;
   font-size: medium;
 }
+
+.kb_input{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  height: 35px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.kb_input input{
+  width: 100%;
+}
+
+.kb_input button{
+  margin-left: 5px;
+  background-color: #e74c3c;
+  display:block;
+  height: 35px;
+  width: 35px;
+  /* width: 50px; */
+  border-radius: 50%;
+  border: none;
+}
+

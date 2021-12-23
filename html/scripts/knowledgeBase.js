@@ -1,3 +1,58 @@
+let answer;
+let question;
+let voiceBtn;
+
+const voices = window.speechSynthesis.getVoices();
+const rusVoice = voices[20];
+
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = new SpeechRecognition();
+recognition.interimResults = true;
+recognition.lang = 'ru-RU';
+
+
+document.addEventListener("DOMContentLoaded", () => {
+	answer = document.getElementById("answer");
+	question = document.getElementById("question");
+	voiceBtn = document.getElementById("voiceBtn");
+
+	voiceBtn.addEventListener('click', () => {
+		recognition.start();
+	});
+})
+
+let currentAnswer = "";
+function FindAnswer() {
+	const answerText = window.getAnswer(question.value);
+	currentAnswer = answerText;
+
+	answer.innerHTML = answerText;
+}
+
+function GenerateVoice() {
+	FindAnswer();
+
+	const msg = new SpeechSynthesisUtterance();
+	msg.lang = "ru-RU";
+	msg.voice = rusVoice;
+	msg.text = currentAnswer;
+	window.speechSynthesis.speak(msg);
+}
+
+let currText = "";
+
+recognition.addEventListener("result", (e) => {
+	currText = Array.from(e.results)
+		.map((result) => result[0])
+		.map((result) => result.transcript)
+		.join("");
+});
+
+recognition.addEventListener("end", () => {
+	question.value = currText + '?';
+});
+
 const KNOWLEDGE_BASE =
 	[
 		["нота ля", "является", "первой клавишей."],
