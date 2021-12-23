@@ -34,6 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	question = document.getElementById("question");
 })
 
+let voices = window.speechSynthesis.getVoices();
+let rusVoice = voices[20];
+
 function FindAnswer() {
-	answer.innerHTML = window.getAnswer(question.value);
+	let answerText = window.getAnswer(question.value);
+	let msg = new SpeechSynthesisUtterance();
+	msg.lang = "ru-RU";
+	msg.voice = rusVoice;
+	msg.text = answerText;
+
+	window.speechSynthesis.speak(msg);
+	answer.innerHTML = answerText;
 }
