@@ -3,7 +3,6 @@ const pages = [
 	"theory.html",
 	"structure.html",
 	"simulation.html",
-	"simulation.html",
 	"knowledgeBase.html",
 	"contacts.html",
 ]
