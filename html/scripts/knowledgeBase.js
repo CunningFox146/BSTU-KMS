@@ -149,7 +149,7 @@ const KNOWLEDGE_BASE =
 		["Дежемесов Макар Сергеевич", "- это", "автор курсового проекта<img width = '300' height = '300' src='images/author.jpg'/>"],
 		["Гурин Николай Иванович", "- это", "Преподователь БГТУ. Доцент кафедры, к.ф.-м.н."],
 		["Диапозон фортепиано", "выглядит", "<img width = '500' height = '300' src='images/octaves.svg'/>"],
-		["пианино", "выглядит", "<img width = '500' height = '300' src='images/piano.png'/>"],
+		["пианино", "выглядит", `<iframe src="animate/station_small/station_small.html" width="640" height="350" frameBorder="0"></iframe>`],
 		["макар", "выглядит", "<img width = '300' height = '300' src='images/author.jpg'/>"],
 		["молоточковый механизм", "выглядит", "так:<br/><img src='images/parts/молоточковый мех.png'/>"],
 		["шпиллер", "выглядит", "так:<br/><img width='300' height='200' src='images/parts/шпиллер.jpg'/>"],
